@@ -9,6 +9,6 @@ struct PixelRGB;
 using RgbImage = std::vector<std::vector<PixelRGB>>;
 using GrayScaleImage = std::vector<std::vector<std::byte>>;
 
-GrayScaleImage rgbToGrayScale(RgbImage);
+GrayScaleImage rgbToGrayScale(const RgbImage& image);
 
 }

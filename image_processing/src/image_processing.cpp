@@ -6,14 +6,6 @@ constexpr double RED_FACTOR{0.299};
 constexpr double GREEN_FACTOR{0.587};
 constexpr double BLUE_FACTOR{0.114};
 
-struct PixelRGB
-{
-    std::byte r{};
-    std::byte g{};
-    std::byte b{};
-};
-
-
 GrayScaleImage rgbToGrayScale(const RgbImage& image)
 {
     GrayScaleImage result{};

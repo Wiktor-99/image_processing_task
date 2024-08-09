@@ -5,7 +5,12 @@
 
 namespace image_processing
 {
-struct PixelRGB;
+struct PixelRGB
+{
+    std::byte r{};
+    std::byte g{};
+    std::byte b{};
+};
 using RgbImage = std::vector<std::vector<PixelRGB>>;
 using GrayScaleImage = std::vector<std::vector<std::byte>>;
 

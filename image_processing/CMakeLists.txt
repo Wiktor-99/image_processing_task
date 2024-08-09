@@ -20,6 +20,7 @@ add_executable(
 target_link_libraries(
     image_processing_test_suite
     gtest_main
+    image_processinglib
 )
 target_compile_features(image_processing_test_suite PUBLIC cxx_std_20)
 include(GoogleTest)

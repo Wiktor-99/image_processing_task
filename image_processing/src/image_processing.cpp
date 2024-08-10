@@ -8,19 +8,18 @@ constexpr double BLUE_FACTOR{0.114};
 
 GrayScaleImage rgbToGrayScale(const RgbImage& image)
 {
-    GrayScaleImage result{};
-    for (const auto& row : image)
+  GrayScaleImage result{};
+  for (const auto& row : image)
+  {
+    std::vector<std::byte> output_row{};
+    for (const auto& [r, g, b] : row)
     {
-        std::vector<std::byte> output_row{};
-        for (const auto& [r, g, b] : row)
-        {
-            output_row.emplace_back(static_cast<std::byte>(
-                std::to_integer<int>(r) * RED_FACTOR +
-                std::to_integer<int>(g) * GREEN_FACTOR +
-                std::to_integer<int>(b) * BLUE_FACTOR));
-        }
-        result.emplace_back(output_row);
+      output_row.emplace_back(static_cast<std::byte>(
+        std::to_integer<int>(r) * RED_FACTOR + std::to_integer<int>(g) * GREEN_FACTOR +
+        std::to_integer<int>(b) * BLUE_FACTOR));
     }
-    return result;
+    result.emplace_back(output_row);
+  }
+  return result;
 }
-}
+}  // namespace image_processing

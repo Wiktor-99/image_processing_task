@@ -8,6 +8,8 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 
+add_compile_options(-Wall -Wextra -Wpedantic)
+
 add_library(image_processinglib src/image_processing.cpp)
 target_compile_features(image_processinglib PUBLIC cxx_std_20)
 target_include_directories(image_processinglib PUBLIC include)

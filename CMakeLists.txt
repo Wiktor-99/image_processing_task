@@ -12,6 +12,7 @@ FetchContent_MakeAvailable(lodepng)
 add_compile_options(-Wall -Wextra -Wpedantic)
 
 add_subdirectory(image_processing/src)
+add_subdirectory(tests)
 add_library(lodepng STATIC
   ${lodepng_SOURCE_DIR}/lodepng.cpp
   ${lodepng_SOURCE_DIR}/lodepng.h

@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
 
   std::vector<unsigned char> image;
   unsigned width{}, height{};
-  unsigned error = lodepng::decode(image, width, height, *filePath, LCT_RGB);
+  unsigned error = lodepng::decode(image, height, width, *filePath, LCT_RGB);
   if (error)
   {
     std::cout << std::format("Error while decoding png {} : {} \n", error, lodepng_error_text(error));

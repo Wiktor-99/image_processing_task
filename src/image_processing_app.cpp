@@ -15,6 +15,11 @@ namespace image_processing_app
 image_processing::RgbImage createRGBImageFromVectorOfBytes(
   const std::vector<unsigned char>& image, unsigned height, unsigned width)
 {
+  if (image.size() != height * width * RGB_STEP)
+  {
+    return {};
+  }
+
   image_processing::RgbImage imageRgb;
   for (std::size_t y = 0; y < height; ++y)
   {

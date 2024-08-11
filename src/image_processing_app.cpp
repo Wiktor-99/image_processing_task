@@ -45,19 +45,19 @@ std::vector<unsigned char> grayscaleImageToVectorOfBytes(const image_processing:
   return outputImage;
 }
 
-std::optional<std::filesystem::path> validateInputData(int argc, char* argv[])
+std::optional<std::filesystem::path> validateInputData(std::vector<std::string> arguments)
 {
-  if (argc < EXPECTED_NUMBER_OF_ARGUMENTS)
+  if (arguments.size() < EXPECTED_NUMBER_OF_ARGUMENTS)
   {
     std::cout << "Not enough arguments. Add following options -i path_to_png_image \n";
     return std::nullopt;
   }
-  if (std::string(argv[INDEX_OF_INPUT_OPTION]) != "-i")
+  if (std::string(arguments[INDEX_OF_INPUT_OPTION]) != "-i")
   {
     std::cout << "Wrong option for input file. Add following options -i path_to_png_image \n";
     return std::nullopt;
   }
-  std::filesystem::path filePath{argv[INDEX_OF_PATH_TO_FILE]};
+  std::filesystem::path filePath{arguments[INDEX_OF_PATH_TO_FILE]};
   if (filePath.extension() != ".png")
   {
     std::cout << "Provided file is not png image.\n";

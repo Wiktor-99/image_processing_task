@@ -15,5 +15,5 @@ image_processing::RgbImage createRGBImageFromVectorOfBytes(
 
 std::vector<unsigned char> grayscaleImageToVectorOfBytes(const image_processing::GrayScaleImage& grayImage);
 
-std::optional<std::filesystem::path> validateInputData(int argc, char* argv[]);
+std::optional<std::filesystem::path> validateInputData(std::vector<std::string> arguments);
 };  // namespace image_processing_app

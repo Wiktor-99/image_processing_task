@@ -10,7 +10,7 @@ constexpr int FAILURE{-1};
 
 int main(int argc, char* argv[])
 {
-  const auto filePath{image_processing_app::validateInputData(argc, argv)};
+  const auto filePath{image_processing_app::validateInputData({argv, argv + argc})};
   if (not filePath)
   {
     return FAILURE;

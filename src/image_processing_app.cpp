@@ -34,6 +34,10 @@ image_processing::RgbImage createRGBImageFromVectorOfBytes(
 
 std::vector<unsigned char> grayscaleImageToVectorOfBytes(const image_processing::GrayScaleImage& grayImage)
 {
+  if (grayImage.empty())
+  {
+    return {};
+  }
   std::vector<unsigned char> outputImage;
   outputImage.reserve(grayImage.front().size() * grayImage.size());
   for (const auto& row : grayImage)
